@@ -2,18 +2,18 @@
 layout: page
 title: Features in version 0.1
 ---
-| Status  | Description 		  	  |
-| ------- | ------------------------------- |
-| Planned | Basic generation		  |
-| Planned | Multiple fields	             	  |
-| Planned | Field aliases  	             	  |
-| Planned | Basic value resolving	         |
-| Planned | Control number of results  	  |
-| Planned | Multiple levels 	     	  |
-| Planned | [Basic formatters](#formatters) |
+| Status  | Description 		  					 |
+| ------- | ---------------------------------------------------------- |
+| Planned | [Basic generation](#basic-generation)			 |
+| Planned | [Multiple fields](#multiple-fields)             		 |
+| Planned | [Field aliases](#field-aliases)	             	 	 |
+| Planned | [Basic value resolving](#basic-value-resolving)      	 |
+| Planned | [Control number of results](#control-number-of-results)	 |
+| Planned | [Multiple levels](#multiple-levels)     	  		 |
+| Planned | [Basic formatters](#basic-formatters) 			 |
 {: class="table"} 
 
-###Basic generation
+###<a name="basic-generation"></a>Basic generation
 Generating data with the basic minimum syntax will use the abbreviation as the property name in the end result.
 
 Given:
@@ -26,7 +26,7 @@ Produces:
 		"joe": "joe"
 	}
 
-###Multiple fields
+###<a name="multiple-fields"></a>Multiple fields
 You can specify multiple fields for the generation by delimiting them with a comma (,).
 
 Given:
@@ -40,7 +40,7 @@ Produces:
 		"soap": "soap"
 	}
 
-###Field aliases
+###<a name="field-aliases"></a>Field aliases
 Field aliases allows us to customize property names by specifying a string followed by a colon (:) before each abbreviation element.
 
 Given:
@@ -65,7 +65,7 @@ Produces:
 		"First Name": "joe"
 	}
 
-###Basic value resolving
+###<a name="basic-value-resolving"></a>Basic value resolving
 Scissr comes out of the box with support for the following primitive types:
 
 | Type		|
@@ -96,7 +96,7 @@ Produces:
 		"number": 32
 	}
 
-###Control number of results
+###<a name="control-number-of-results"></a>Control number of results
 By default the result is generated as a single object. You can control the number of items to generate by making use of astrix (*) followed by a number that specifies the total number of items.
 
 Given:
@@ -138,7 +138,7 @@ Produces:
 		}
 	]
 
-###Multiple levels
+###<a name="multiple-levels"></a>Multiple levels
 Sometimes you need to generate more complex data. Scissr supports multiple level structures of N-level deep. Use the brackets to denote a child level.
 
 Given:
@@ -184,7 +184,7 @@ Produces:
 		]
 	}
 
-###<a name="formatters"></a>Basic formatters
+###<a name="basic-formatters"></a>Basic formatters
 By default Scissr renders the output result in JSON as it is infers it if no explicit formatter is specified. To explictly specify a formatter, we use a dot (.) followed by the formatter identifier.
 
 Given:
