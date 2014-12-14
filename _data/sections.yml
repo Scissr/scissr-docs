@@ -1,23 +1,19 @@
-- title: Abbreviations
-  link: /abbreviations
+- title: Usage
+  link: /usage
   pages:
   - title: Syntax
-    link: /abbreviations/syntax
-
-  - title: Test Page 2
-    link: /abbreviations/test2
-
-- title: Cheat Sheet
-  link: /cheat-sheet
-  pages:
-  - title: Test Page 3
-    link: /cheat-sheet/test3
-
-  - title: Test Page 4
-    link: /cheat-sheet/test4
+    link: /usage/syntax
 
 - title: Roadmap
   link: /roadmap
   pages:
   - title: Version 1
     link: /roadmap/v1
+
+- title: Specification
+  link: /Specification
+  pages:
+  - title: Syntax tree
+    link: /specification/syntax-tree
+  - title: Parser
+    link: /specification/parser
