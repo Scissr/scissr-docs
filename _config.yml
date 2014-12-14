@@ -14,8 +14,7 @@ avatar: https://avatars2.githubusercontent.com/u/9211971?v=2&s=200
 #
 # Flags below are optional
 #
-markdown: linguist
-extensions: [fenced_code_blocks]
+
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble: 
