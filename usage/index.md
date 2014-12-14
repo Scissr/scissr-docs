@@ -30,4 +30,9 @@ Example: This abbreviation:
 	]
 
 ### Full syntax
-	("FirstName":fname,"LastName":lname,"Contacts":("Home":tel,"Office":tel))*3.xml["People"]
+
+<pre class="sample">
+('<span class="label label-default">alias</span>':<span class="label label-default">element</span>,'<span class="label label-default">alias</span>':<span class="label label-default">element</span>)*<span class="label label-default">number of items</span>.<span class="label label-default">formatter</span>
+</pre>
+
+	('FirstName':fname,'LastName':lname,'Contacts':('Home':tel,'Office':tel))*3.xml
