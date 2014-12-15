@@ -27,7 +27,7 @@ Produces:
 	}
 
 ###<a name="multiple-fields"></a>Multiple fields
-You can specify multiple fields for the generation by delimiting them with a comma (,).
+You can specify multiple fields for the generation by delimiting them with the comma operator (,).
 
 Given:
 
@@ -41,7 +41,7 @@ Produces:
 	}
 
 ###<a name="field-aliases"></a>Field aliases
-Field aliases allows us to customize property names by specifying a string followed by a colon (:) before each abbreviation element.
+Field aliases allows us to customize property names by specifying a string followed by the colon operator (:) before each abbreviation element.
 
 Given:
 
@@ -97,7 +97,7 @@ Produces:
 	}
 
 ###<a name="control-number-of-results"></a>Control number of results
-By default the result is generated as a single object. You can control the number of items to generate by making use of astrix (*) followed by a number that specifies the total number of items.
+By default the result is generated as a single object. You can control the number of items to generate by making use of the astrix operator (*) followed by a number that specifies the total number of items.
 
 Given:
 
@@ -156,7 +156,7 @@ Produces:
 		}
 	}
 
-This scenario also supports N-number of child results. Like mentioned before, this is specified by astrix (*) followed by the number of items.
+This scenario also supports N-number of child results. Like mentioned before, this is specified by the astrix operator (*) followed by the number of items.
 
 Given:
 
@@ -185,11 +185,11 @@ Produces:
 	}
 
 ###<a name="basic-formatters"></a>Basic formatters
-By default Scissr renders the output result in JSON as it is infers it if no explicit formatter is specified. To explictly specify a formatter, we use a dot (.) followed by the formatter identifier.
+By default Scissr renders the output result in JSON if no explicit formatter is specified as it is inferred. To explictly specify a formatter, we use the equals operator (=) followed by the formatter identifier.
 
 Given:
 
-	(string,number).json
+	string,number=json
 
 Produces:
 
@@ -200,7 +200,7 @@ Produces:
 
 XML is also supported out of the box:
 
-	(string,number).xml
+	string,number=xml
 
 Produces:
 
