@@ -184,6 +184,34 @@ Produces:
 		]
 	}
 
+You can also combine arrays with aliases:
+
+Given:
+
+	string,number,votes:(date,bool)*3
+
+Produces:
+
+	{
+		"string": "shoe",
+		"number": 25,
+		"votes": 
+		[
+			{
+				"date": "2012-04-13T18:25:43.511Z",
+				"bool": false
+			},
+			{
+				"date": "2012-02-23T18:25:43.511Z",
+				"bool": false
+			},
+			{
+				"date": "2010-04-23T18:25:43.511Z",
+				"bool": true
+			}
+		]
+	}
+
 ###<a name="basic-formatters"></a>Basic formatters
 By default Scissr renders the output result in JSON if no explicit formatter is specified as it is inferred. To explictly specify a formatter, we use the equals operator (=) followed by the formatter identifier.
 
