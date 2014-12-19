@@ -7,17 +7,18 @@ title: Features in version 0.1
 | Planned | [Basic generation](#basic-generation)			 |
 | Planned | [Multiple fields](#multiple-fields)             		 |
 | Planned | [Field aliases](#field-aliases)	             	 	 |
-| Planned | [Basic value resolving](#basic-value-resolving)      	 |
-| Planned | [Control number of results](#control-number-of-results)	 |
+| Planned | [Arrays](#arrays) 						 |
 | Planned | [Multiple levels](#multiple-levels)     	  		 |
+| Planned | [Basic value resolving](#basic-value-resolving)      	 |
 | Planned | [Basic formatters](#basic-formatters) 			 |
 {: class="table"} 
 
-###<a name="basic-generation"></a>Basic generation
+###Basic generation
 Generating data with the basic minimum syntax will use the abbreviation as the property name in the end result.
 
 Given:
 
+{:class="scissr-syntax"} 
 	joe
 
 Produces:
@@ -26,11 +27,12 @@ Produces:
 		"joe": "joe"
 	}
 
-###<a name="multiple-fields"></a>Multiple fields
-You can specify multiple fields for the generation by delimiting them with the comma operator (,).
+###Multiple fields
+You can specify multiple fields for the generation by delimiting them with the comma operator (`,`).
 
 Given:
 
+{:class="scissr-syntax"} 
 	joe,soap
 
 Produces:
@@ -40,11 +42,12 @@ Produces:
 		"soap": "soap"
 	}
 
-###<a name="field-aliases"></a>Field aliases
-Field aliases allows us to customize property names by specifying a string followed by the colon operator (:) before each abbreviation element.
+###Field aliases
+Field aliases allows us to customize property names by specifying a string followed by the colon operator (`:`) before each abbreviation element.
 
 Given:
 
+{:class="scissr-syntax"} 
 	name:joe
 
 Produces:
@@ -53,10 +56,11 @@ Produces:
 		"name": "joe"
 	}
 
-Aliases can be any string value. It is also possible for aliases to have spaces. Simply wrap the string in single quotation marks (').
+Aliases can be any string value. It is also possible for aliases to have spaces. Simply wrap the string in single quotation marks (`'`).
 
 Given:
 
+{:class="scissr-syntax"} 
 	'First Name':joe
 
 Produces:
@@ -65,7 +69,121 @@ Produces:
 		"First Name": "joe"
 	}
 
-###<a name="basic-value-resolving"></a>Basic value resolving
+###Arrays
+By default the result is generated as a single object. You can create an object arrays with specific number of items by making use of the astrix operator (`*`) followed by a number that specifies the total number of items.
+
+Given:
+
+{:class="scissr-syntax"} 
+	joe*3
+
+Produces:
+
+	{
+		"joeArray":
+		[
+			{
+				"joe": "joe"
+			},
+			{
+				"joe": "joe"
+			},
+			{
+				"joe": "joe"
+			}
+		]
+	}
+
+For multiple fields, you need to wrap them in brackets before specifying the astrix operator (`*`):
+
+{:class="scissr-syntax"} 
+	people:(joe,soap)*3
+
+Produces:
+
+	{
+		"people":
+		[
+			{
+				"joe": "joe",
+				"soap": "soap"
+			},
+			{
+				"joe": "joe",
+				"soap": "soap"
+			},
+			{
+				"joe": "joe",
+				"soap": "soap"
+			}
+		]
+	}
+
+To generate simple type arrays use the `@` operator:
+
+{:class="scissr-syntax"} 
+	tags:abc@3
+
+Produces:
+
+	{
+		"tags":
+		[
+			"abc",
+			"abc",
+			"abc"
+		]
+	}
+
+###Multiple levels
+Sometimes you need to generate more complex data. Scissr supports multiple level structures of N-level deep. Use the brackets to denote a child level.
+
+Given:
+
+{:class="scissr-syntax"} 
+	joe,soap,child:(abc,def)
+
+Produces:
+
+	{
+		"joe": "joe",
+		"soap": "soap",
+		"child": {
+			"abc": "abc",
+			"def": def
+		}
+	}
+
+This scenario also supports N-number of child results. Like mentioned before, this is specified by the astrix operator (*) followed by the number of items.
+
+Given:
+
+{:class="scissr-syntax"} 
+	joe,soap,children:(abc,def)*3
+
+Produces:
+
+	{
+		"joe": "joe",
+		"soap": "soap",
+		"children": 
+		[
+			{
+				"abc": "abc",
+				"def": "def"
+			},
+			{
+				"abc": "abc",
+				"def": "def"
+			},
+			{
+				"abc": "abc",
+				"def": "def"
+			}
+		]
+	}
+
+###Basic value resolving
 Scissr comes out of the box with support for the following primitive types:
 
 | Type		|
@@ -79,15 +197,18 @@ Scissr comes out of the box with support for the following primitive types:
 
 Given any of the above mentioned types will return a random value based from the specified type:
 
+{:class="scissr-syntax"} 
 	string
 
 Produces:
 
 	{
-		"string": "cake"
+		"string": "Lorem ipsum dolor sit amet"
 	}
 
 Given:
+
+{:class="scissr-syntax"} 
 	number
 
 Produces:
@@ -96,142 +217,40 @@ Produces:
 		"number": 32
 	}
 
-###<a name="control-number-of-results"></a>Control number of results
-By default the result is generated as a single object. You can control the number of items to generate by making use of the astrix operator (*) followed by a number that specifies the total number of items.
+In the event where you need to override the value resolving and explicitly declare the element value of a valid type, just use single quotes (`'`) around the element:
 
 Given:
 
-	string*3
-
-Produces:
-
-	[
-		{
-			"string": "boat"
-		},
-		{
-			"string": "car"
-		},
-		{
-			"string": "plant"
-		}
-	]
-
-For multiple fields, you need to wrap them in brackets before specifying the multiplication operator:
-
-	(string,number)*3
-
-Produces:
-
-	[
-		{
-			"string": "boat",
-			"number": 32
-		},
-		{
-			"string": "bicycle",
-			"number": 43
-		},
-		{
-			"string": "tree",
-			"number": 101
-		}
-	]
-
-###<a name="multiple-levels"></a>Multiple levels
-Sometimes you need to generate more complex data. Scissr supports multiple level structures of N-level deep. Use the brackets to denote a child level.
-
-Given:
-
-	string,number,(date,bool)
+{:class="scissr-syntax"} 
+	'string'
 
 Produces:
 
 	{
-		"string": "shoe",
-		"number": 25,
-		"date,bool": {
-			"date": "2012-04-23T18:25:43.511Z",
-			"bool": true
-		}
+		"string": "string"
 	}
 
-This scenario also supports N-number of child results. Like mentioned before, this is specified by the astrix operator (*) followed by the number of items.
-
-Given:
-
-	string,number,(date,bool)*3
-
-Produces:
-
-	{
-		"string": "shoe",
-		"number": 25,
-		"date,bool": 
-		[
-			{
-				"date": "2012-04-13T18:25:43.511Z",
-				"bool": false
-			},
-			{
-				"date": "2012-02-23T18:25:43.511Z",
-				"bool": false
-			},
-			{
-				"date": "2010-04-23T18:25:43.511Z",
-				"bool": true
-			}
-		]
-	}
-
-You can also combine arrays with aliases:
-
-Given:
-
-	string,number,votes:(date,bool)*3
-
-Produces:
-
-	{
-		"string": "shoe",
-		"number": 25,
-		"votes": 
-		[
-			{
-				"date": "2012-04-13T18:25:43.511Z",
-				"bool": false
-			},
-			{
-				"date": "2012-02-23T18:25:43.511Z",
-				"bool": false
-			},
-			{
-				"date": "2010-04-23T18:25:43.511Z",
-				"bool": true
-			}
-		]
-	}
-
-###<a name="basic-formatters"></a>Basic formatters
+###Basic formatters
 By default Scissr renders the output result in JSON if no explicit formatter is specified as it is inferred. To explictly specify a formatter, we use the equals operator (=) followed by the formatter identifier.
 
 Given:
 
+{:class="scissr-syntax"} 
 	string,number=json
 
 Produces:
 
 	{
-		"string": "sailor",
+		"string": "Lorem ipsum dolor sit amet",
 		"number": 23
 	}
 
 XML is also supported out of the box:
 
+{:class="scissr-syntax"} 
 	string,number=xml
 
 Produces:
 
 	<string>candy</string>
 	<number>51</number>
-
