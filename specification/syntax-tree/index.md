@@ -26,9 +26,9 @@ title: Syntax tree
 
 ###NodeType
 
-| Name                    | Description	                                  |
-| ----------------------- | --------------------------------------------- |
-| simple                  | Simple type of string, number or date         |
-| complex                 | Object type                                   |
-| array&lt;nodeType&gt;[] | Array of a certain type with a specific count |
+| Name                    | Description	                                       |
+| ----------------------- | -------------------------------------------------- |
+| simple                  | Simple type of string, number or date              |
+| complex                 | Object type                                        |
+| array&lt;nodeType&gt;[] | Array of a specific nodeType with a specific count |
 {: class="table"} 
