@@ -30,5 +30,5 @@ title: Syntax tree
 | ----------------------- | -------------------------------------------------- |
 | simple                  | Simple type of string, number or date              |
 | complex                 | Object type                                        |
-| array&lt;nodeType&gt;[] | Array of a specific nodeType with a specific count |
+| array&lt;nodeType&gt;[] | Array of nodeType with a specific count            |
 {: class="table"} 
