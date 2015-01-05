@@ -2,23 +2,33 @@
 layout: page
 title: Syntax tree
 ---
+{% assign special = '{{ example }}' %}
+{% assign special = '{{ example }}' %}
 
-| Property	 | Type   	   | Description						|
-| ------------ | ------------- | -------------------------------------------------- |
-| parser	 | string 	   | Name of parser that generated the syntax tree 	|
-| formatter	 | string 	   | Format specifier of the result			|
-| cardinality  | string        | Denotes if result is a single object or array	|
-| count	 | number 	   | Total number of items in the result			|
-| data 	 | array[object] | Additional metadata for specific generation		|
-| nodes	 | array[node]   | Node collection						|
+| Property     | Type             | Required | Default | Description                                        |
+| ------------ | ---------------- | -------- | --------| -------------------------------------------------- |
+| parser       | string           | yes      | scissr  | Name of parser that generated the syntax tree      |
+| formatter    | string           | yes      | json    | Format specifier of the result                     |
+| data         | array of objects | no       |         | Additional metadata for specific generation        |
+| nodes        | array of nodes   | yes      |         | Node collection                                    |
 {: class="table"} 	
 
 ###Node
 
-| Property | Type   	      | Description							|
-| -------- | ------------- | ------------------------------------------------------ |
-| key	    | string 	      | Identifier of node						|
-| alias    | string 	      | Friendly name of node					|
-| data     | array[object] | Additional metadata for specific generation		|
-| nodes    | array[node]   | Node collection						|
+| Property | Type   	      | Required | Default | Description	            |
+| -------- | ---------------- | -------- | ------- | -------------------------- |
+| resolver | string 	      | no       |         | Value resolver             |
+| type     | nodeType         | yes      |         | Type of node               |
+| alias    | string           | yes      |         | Friendly name of node      |
+| data     | array of objects | no       |         | Additional metadata        |
+| nodes    | array of nodes   | no       |         | Node collection	        |
+{: class="table"} 
+
+###NodeType
+
+| Name                    | Description	                                  |
+| ----------------------- | --------------------------------------------- |
+| simple                  | Simple type of string, number or date         |
+| complex                 | Object type                                   |
+| array&lt;nodeType&gt;[] | Array of a certain type with a specific count |
 {: class="table"} 
