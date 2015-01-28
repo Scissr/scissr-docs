@@ -7,4 +7,12 @@ $(function () {
   	$('[data-toggle="offcanvas"]').click(function () {
    		$('.row-offcanvas').toggleClass('active')
   	});
+
+  	hljs.configure({
+  		tabReplace: '    ', // 4 spaces
+  		classPrefix: ''     // don't append class prefix
+                      // … other options aren't changed
+	})
+	
+	hljs.initHighlighting();
 });

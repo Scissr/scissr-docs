@@ -10,9 +10,22 @@ Input:
 	joe
 
 Output:
-{% highlight javascript %}
-{{site.data.basic-generation | jsonify}}
-{% endhighlight %}
+
+	{
+		"parser": "scissr",
+		"formatter": "json",
+		"nodes": [
+			{
+				"resolver": "joe",
+				"type": {
+					"name": "string",
+					"isArray": false,
+					"length": 1
+				},
+				"alias": "joe"
+			}
+		]
+	}
 
 ###Multiple fields
 Input:
@@ -21,9 +34,31 @@ Input:
 	joe,soap
 
 Output:
-{% highlight javascript %}
-{{site.data.multiple-fields | pretty_json}}
-{% endhighlight %}
+
+	{
+		"parser": "scissr",
+		"formatter": "json",
+		"nodes": [
+			{
+				"resolver": "joe",
+				"type": {
+					"name": "string",
+					"isArray": false,
+					"length": 1
+				},
+				"alias": "joe"
+			},
+			{
+				"resolver": "soap",
+				"type": {
+					"name": "string",
+					"isArray": false,
+					"length": 1
+				},
+				"alias": "soap"
+			}
+		]
+	}
 
 ###Field aliases
 Input:
@@ -32,10 +67,22 @@ Input:
 	name:joe
 
 Output:
-{% highlight javascript %}
-{{site.data.multiple-fields | pretty_json}}
-{% endhighlight %}
-	
+
+	{
+		"parser": "scissr",
+		"formatter": "json",
+		"nodes": [
+			{
+				"resolver": "joe",
+				"type": {
+					"name": "string",
+					"isArray": false,
+					"length": 1
+				},
+				"alias": "name"
+			}
+		]
+	}
 
 ###Arrays
 Input:
