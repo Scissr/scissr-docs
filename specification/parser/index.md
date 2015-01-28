@@ -10,19 +10,9 @@ Input:
 	joe
 
 Output:
-
-	{
-		"parser": "scissr",
-		"formatter": "json",
-		"nodes":
-		[
-			{
-				"resolver": "joe",
-				"type": "simple",
-				"alias": "joe"
-			}
-		]
-	}
+{% highlight javascript %}
+{{site.data.basic-generation | pretty_json}}
+{% endhighlight %}
 
 ###Multiple fields
 Input:
@@ -31,24 +21,9 @@ Input:
 	joe,soap
 
 Output:
-
-	{
-		"parser": "scissr",
-		"formatter": "json",
-		"nodes":
-		[
-			{
-				"resolver": "joe",
-				"type": "simple",
-				"alias": "joe",
-			},
-			{
-				"resolver": "soap",
-				"type": "simple",
-				"alias": "soap"
-			}
-		]
-	}
+{% highlight javascript %}
+{{site.data.multiple-fields | pretty_json}}
+{% endhighlight %}
 
 ###Field aliases
 Input:
@@ -57,19 +32,10 @@ Input:
 	name:joe
 
 Output:
-
-	{
-		"parser": "scissr",
-		"formatter": "json",
-		"nodes":
-		[
-			{
-				"resolver": "joe",
-				"type": "simple",
-				"alias": "name"
-			}
-		]
-	}
+{% highlight javascript %}
+{{site.data.multiple-fields | pretty_json}}
+{% endhighlight %}
+	
 
 ###Arrays
 Input:
@@ -82,16 +48,22 @@ Produces:
 	{
 		"parser": "scissr",
 		"formatter": "json",
-		"nodes":
-		[
+		"nodes": [
 			{
-				"type": "array<complex>[3]",
+				"type": {
+					"name": "object",
+					"isArray": true,
+					"length": 3
+				},
 				"alias": "joeArray",
-				"nodes":
-				[
+				"nodes": [
 					{
 						"resolver": "joe",
-						"type": "simple",
+						"type": {
+							"name": "string",
+							"isArray": false,
+							"length": 1
+						},
 						"alias": "joe"
 					}
 				]
@@ -109,22 +81,32 @@ Produces:
 	{
 		"parser": "scissr",
 		"formatter": "json",
-		"nodes":
-		[
+		"nodes": [
 			{
 
-				"type": "array<complex>[3]",
+				"type": {
+					"name": "object",
+					"isArray": true,
+					"length": 3
+				},
 				"alias": "people",
-				"nodes":
-				[
+				"nodes": [
 					{
 						"resolver": "joe",
-						"type": "simple",
+						"type": {
+							"name": "string",
+							"isArray": false,
+							"length": 1
+						},
 						"alias": "joe"
 					},
 					{
 						"resolver": "soap",
-						"type": "simple",
+						"type": {
+							"name": "string",
+							"isArray": false,
+							"length": 1
+						},
 						"alias": "soap"
 					}
 				]
@@ -141,11 +123,14 @@ Produces:
 	{
 		"parser": "scissr",
 		"formatter": "json",
-		"nodes":
-		[
+		"nodes": [
 			{
 				"resolver": "abc",
-				"type": "array<simple>[3]",
+				"type": {
+					"name": "string",
+					"isArray": true,
+					"length": 3
+				},
 				"alias": "tags"
 			}
 		]
@@ -162,31 +147,49 @@ Produces:
 	{
 		"parser": "scissr",
 		"formatter": "json",
-		"nodes":
-		[
+		"nodes": [
 			{
 				"resolver": "joe",
-				"type": "simple",
+				"type": {
+					"name": "string",
+					"isArray": false,
+					"length": 1
+				},
 				"alias": "joe"
 			},
 			{
 				"resolver": "soap",
-				"type": "simple",
+				"type": {
+					"name": "string",
+					"isArray": false,
+					"length": 1
+				},
 				"alias": "soap"
 			},
 			{
-				"type": "complex",
+				"type": {
+					"name": "object",
+					"isArray": false,
+					"length": 1
+				},
 				"alias": "child",
-				"nodes":
-				[
+				"nodes": [
 					{
 						"resolver": "abc",
-						"type": "simple",
+						"type": {
+							"name": "string",
+							"isArray": false,
+							"length": 1
+						},
 						"alias": "abc"
 					},
 					{
 						"resolver": "def",
-						"type": "simple",
+						"type": {
+							"name": "string",
+							"isArray": false,
+							"length": 1
+						},
 						"alias": "def"
 					}
 				]
@@ -204,31 +207,49 @@ Produces:
 	{
 		"parser": "scissr",
 		"formatter": "json",
-		"nodes":
-		[
+		"nodes": [
 			{
 				"resolver": "joe",
-				"type": "simple",
+				"type": {
+					"name": "string",
+					"isArray": false,
+					"length": 1
+				},
 				"alias": "joe"
 			},
 			{
 				"resolver": "soap",
-				"type": "simple",
+				"type": {
+					"name": "string",
+					"isArray": false,
+					"length": 1
+				},
 				"alias": "soap"
 			},
 			{
-				"type": "array<complex>[3]",
+				"type": {
+					"name": "object",
+					"isArray": true,
+					"length": 3
+				},
 				"alias": "children",
-				"nodes":
-				[
+				"nodes": [
 					{
 						"resolver": "abc",
-						"type": "simple",
+						"type": {
+							"name": "string",
+							"isArray": false,
+							"length": 1
+						},
 						"alias": "abc"
 					},
 					{
 						"resolver": "def",
-						"type": "simple",
+						"type": {
+							"name": "string",
+							"isArray": false,
+							"length": 1
+						},
 						"alias": "def"
 					}
 				]
@@ -247,16 +268,23 @@ Produces:
 	{
 		"parser": "scissr",
 		"formatter": "json",
-		"nodes":
-		[
+		"nodes": [
 			{
 				"resolver": "string",
-				"type": "simple",
+				"type": {
+					"name": "string",
+					"isArray": false,
+					"length": 1
+				},
 				"alias": "string"
 			},
 			{
 				"resolver": "number",
-				"type": "simple",
+				"type": {
+					"name": "number",
+					"isArray": false,
+					"length": 1
+				},
 				"alias": "number"
 			}
 		]
@@ -272,16 +300,23 @@ Produces:
 	{
 		"parser": "scissr",
 		"formatter": "xml",
-		"nodes":
-		[
+		"nodes": [
 			{
 				"resolver": "string",
-				"type": "simple",
+				"type": {
+					"name": "string",
+					"isArray": false,
+					"length": 1
+				},
 				"alias": "string"
 			},
 			{
 				"resolver": "number",
-				"type": "simple",
+				"type": {
+					"name": "number",
+					"isArray": false,
+					"length": 1
+				},
 				"alias": "number"
 			}
 		]

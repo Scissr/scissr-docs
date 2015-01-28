@@ -1,0 +1,15 @@
+{
+	"parser": "scissr",
+	"formatter": "json",
+	"nodes": [
+		{
+			"resolver": "joe",
+			"type": {
+				"name": "string",
+				"isArray": false,
+				"length": 1
+			},
+			"alias": "name"
+		}
+	]
+}
