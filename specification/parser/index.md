@@ -11,7 +11,7 @@ Input:
 
 Output:
 {% highlight javascript %}
-{{site.data.basic-generation | pretty_json}}
+{{site.data.basic-generation | jsonify}}
 {% endhighlight %}
 
 ###Multiple fields
