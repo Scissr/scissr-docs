@@ -16,12 +16,11 @@ Output:
 		"formatter": "json",
 		"nodes": [
 			{
-				"resolver": "joe",
-				"type": {
-					"name": "string",
-					"isArray": false,
-					"length": 1
-				},
+				"type": "joe",
+				"baseType": "object",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"alias": "joe"
 			}
 		]
@@ -40,21 +39,19 @@ Output:
 		"formatter": "json",
 		"nodes": [
 			{
-				"resolver": "joe",
-				"type": {
-					"name": "string",
-					"isArray": false,
-					"length": 1
-				},
+				"type": "joe",
+				"baseType": "object",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"alias": "joe"
 			},
 			{
-				"resolver": "soap",
-				"type": {
-					"name": "string",
-					"isArray": false,
-					"length": 1
-				},
+				"type": "soap",
+				"baseType": "object",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"alias": "soap"
 			}
 		]
@@ -73,12 +70,11 @@ Output:
 		"formatter": "json",
 		"nodes": [
 			{
-				"resolver": "joe",
-				"type": {
-					"name": "string",
-					"isArray": false,
-					"length": 1
-				},
+				"type": "joe",
+				"baseType": "object",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"alias": "name"
 			}
 		]
@@ -88,7 +84,7 @@ Output:
 Input:
 
 {:class="scissr-syntax"} 
-	joe*3
+	(joe)*3
 
 Produces:
 
@@ -97,23 +93,22 @@ Produces:
 		"formatter": "json",
 		"nodes": [
 			{
-				"type": {
-					"name": "object",
-					"isArray": true,
-					"length": 3
-				},
-				"alias": "joeArray",
+				"type": "object",
+				"baseType": "object",
+				"isArray": true,
+				"count": "3",
+				"data": [],
 				"nodes": [
 					{
-						"resolver": "joe",
-						"type": {
-							"name": "string",
-							"isArray": false,
-							"length": 1
-						},
+						"type": "joe",
+						"baseType": "string",
+						"isArray": false,
+						"count": 1,
+						"data": [],
 						"alias": "joe"
 					}
-				]
+				],
+				"alias": "objectArray"
 			}
 		]
 	}
@@ -130,33 +125,30 @@ Produces:
 		"formatter": "json",
 		"nodes": [
 			{
-
-				"type": {
-					"name": "object",
-					"isArray": true,
-					"length": 3
-				},
-				"alias": "people",
+				"type": "object",
+				"baseType": "object",
+				"isArray": true,
+				"count": "3",
+				"data": [],
 				"nodes": [
 					{
-						"resolver": "joe",
-						"type": {
-							"name": "string",
-							"isArray": false,
-							"length": 1
-						},
+						"type": "joe",
+						"baseType": "string",
+						"isArray": false,
+						"count": 1,
+						"data": [],
 						"alias": "joe"
 					},
 					{
-						"resolver": "soap",
-						"type": {
-							"name": "string",
-							"isArray": false,
-							"length": 1
-						},
+						"type": "soap",
+						"baseType": "string",
+						"isArray": false,
+						"count": 1,
+						"data": [],
 						"alias": "soap"
 					}
-				]
+				],
+				"alias": "people"
 			}
 		]
 	}
@@ -172,12 +164,11 @@ Produces:
 		"formatter": "json",
 		"nodes": [
 			{
-				"resolver": "abc",
-				"type": {
-					"name": "string",
-					"isArray": true,
-					"length": 3
-				},
+				"type": "abc",
+				"baseType": "string",
+				"isArray": true,
+				"count": "3",
+				"data": [],
 				"alias": "tags"
 			}
 		]
@@ -196,50 +187,46 @@ Produces:
 		"formatter": "json",
 		"nodes": [
 			{
-				"resolver": "joe",
-				"type": {
-					"name": "string",
-					"isArray": false,
-					"length": 1
-				},
+				"type": "joe",
+				"baseType": "string",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"alias": "joe"
 			},
 			{
-				"resolver": "soap",
-				"type": {
-					"name": "string",
-					"isArray": false,
-					"length": 1
-				},
+				"type": "soap",
+				"baseType": "string",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"alias": "soap"
 			},
 			{
-				"type": {
-					"name": "object",
-					"isArray": false,
-					"length": 1
-				},
-				"alias": "child",
+				"type": "object",
+				"baseType": "object",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"nodes": [
 					{
-						"resolver": "abc",
-						"type": {
-							"name": "string",
-							"isArray": false,
-							"length": 1
-						},
+						"type": "abc",
+						"baseType": "string",
+						"isArray": false,
+						"count": 1,
+						"data": [],
 						"alias": "abc"
 					},
 					{
-						"resolver": "def",
-						"type": {
-							"name": "string",
-							"isArray": false,
-							"length": 1
-						},
+						"type": "def",
+						"baseType": "string",
+						"isArray": false,
+						"count": 1,
+						"data": [],
 						"alias": "def"
 					}
-				]
+				],
+				"alias": "child"
 			}
 		]
 	}
@@ -256,50 +243,46 @@ Produces:
 		"formatter": "json",
 		"nodes": [
 			{
-				"resolver": "joe",
-				"type": {
-					"name": "string",
-					"isArray": false,
-					"length": 1
-				},
+				"type": "joe",
+				"baseType": "string",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"alias": "joe"
 			},
 			{
-				"resolver": "soap",
-				"type": {
-					"name": "string",
-					"isArray": false,
-					"length": 1
-				},
+				"type": "soap",
+				"baseType": "string",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"alias": "soap"
 			},
 			{
-				"type": {
-					"name": "object",
-					"isArray": true,
-					"length": 3
-				},
-				"alias": "children",
+				"type": "object",
+				"baseType": "object",
+				"isArray": true,
+				"count": "3",
+				"data": [],
 				"nodes": [
 					{
-						"resolver": "abc",
-						"type": {
-							"name": "string",
-							"isArray": false,
-							"length": 1
-						},
+						"type": "abc",
+						"baseType": "string",
+						"isArray": false,
+						"count": 1,
+						"data": [],
 						"alias": "abc"
 					},
 					{
-						"resolver": "def",
-						"type": {
-							"name": "string",
-							"isArray": false,
-							"length": 1
-						},
+						"type": "def",
+						"baseType": "string",
+						"isArray": false,
+						"count": 1,
+						"data": [],
 						"alias": "def"
 					}
-				]
+				],
+				"alias": "children"
 			}
 		]
 	}
@@ -308,7 +291,7 @@ Produces:
 Given:
 
 {:class="scissr-syntax"} 
-	string,number=json
+	string,int=json
 
 Produces:
 
@@ -317,22 +300,20 @@ Produces:
 		"formatter": "json",
 		"nodes": [
 			{
-				"resolver": "string",
-				"type": {
-					"name": "string",
-					"isArray": false,
-					"length": 1
-				},
+				"type": "string",
+				"baseType": "string",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"alias": "string"
 			},
 			{
-				"resolver": "number",
-				"type": {
-					"name": "number",
-					"isArray": false,
-					"length": 1
-				},
-				"alias": "number"
+				"type": "int",
+				"baseType": "int",
+				"isArray": false,
+				"count": 1,
+				"data": [],
+				"alias": "int"
 			}
 		]
 	}
@@ -340,7 +321,7 @@ Produces:
 Given:
 
 {:class="scissr-syntax"} 
-	string,number=xml
+	string,int=xml
 
 Produces:
 
@@ -349,22 +330,20 @@ Produces:
 		"formatter": "xml",
 		"nodes": [
 			{
-				"resolver": "string",
-				"type": {
-					"name": "string",
-					"isArray": false,
-					"length": 1
-				},
+				"type": "string",
+				"baseType": "string",
+				"isArray": false,
+				"count": 1,
+				"data": [],
 				"alias": "string"
 			},
 			{
-				"resolver": "number",
-				"type": {
-					"name": "number",
-					"isArray": false,
-					"length": 1
-				},
-				"alias": "number"
+				"type": "int",
+				"baseType": "int",
+				"isArray": false,
+				"count": 1,
+				"data": [],
+				"alias": "int"
 			}
 		]
 	}

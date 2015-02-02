@@ -80,7 +80,7 @@ Given:
 Produces:
 
 	{
-		"joeArray":
+		"objectArray":
 		[
 			{
 				"joe": "joe"
@@ -189,7 +189,7 @@ Scissr comes out of the box with support for the following primitive types:
 | Type		|
 | ----------- |
 | string	|
-| number	|
+| int	|
 | float	|
 | date		|
 | bool		|
@@ -209,12 +209,12 @@ Produces:
 Given:
 
 {:class="scissr-syntax"} 
-	number
+	int
 
 Produces:
 
 	{
-		"number": 32
+		"int": 32
 	}
 
 In the event where you need to override the value resolving and explicitly declare the element value of a valid type, just use single quotes (`'`) around the element:
@@ -236,21 +236,23 @@ By default Scissr renders the output result in JSON if no explicit formatter is 
 Given:
 
 {:class="scissr-syntax"} 
-	string,number=json
+	string,int=json
 
 Produces:
 
 	{
 		"string": "Lorem ipsum dolor sit amet",
-		"number": 23
+		"int": 23
 	}
 
 XML is also supported out of the box:
 
 {:class="scissr-syntax"} 
-	string,number=xml
+	string,int=xml
 
 Produces:
 
-	<string>candy</string>
-	<number>51</number>
+	<root>
+		<string>candy</string>
+		<int>51</int>
+	</root>
