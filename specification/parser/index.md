@@ -17,7 +17,7 @@ Output:
 		"nodes": [
 			{
 				"type": "joe",
-				"baseType": "object",
+				"baseType": "string",
 				"isArray": false,
 				"count": 1,
 				"data": [],
@@ -40,7 +40,7 @@ Output:
 		"nodes": [
 			{
 				"type": "joe",
-				"baseType": "object",
+				"baseType": "string",
 				"isArray": false,
 				"count": 1,
 				"data": [],
@@ -48,7 +48,7 @@ Output:
 			},
 			{
 				"type": "soap",
-				"baseType": "object",
+				"baseType": "string",
 				"isArray": false,
 				"count": 1,
 				"data": [],
@@ -71,7 +71,7 @@ Output:
 		"nodes": [
 			{
 				"type": "joe",
-				"baseType": "object",
+				"baseType": "string",
 				"isArray": false,
 				"count": 1,
 				"data": [],
