@@ -13,7 +13,7 @@ Output:
 
 	{
 		"parser": "scissr",
-		"formatter": "json",
+		"generator": "json",
 		"nodes": [
 			{
 				"type": "joe",
@@ -36,7 +36,7 @@ Output:
 
 	{
 		"parser": "scissr",
-		"formatter": "json",
+		"generator": "json",
 		"nodes": [
 			{
 				"type": "joe",
@@ -67,7 +67,7 @@ Output:
 
 	{
 		"parser": "scissr",
-		"formatter": "json",
+		"generator": "json",
 		"nodes": [
 			{
 				"type": "joe",
@@ -90,7 +90,7 @@ Produces:
 
 	{
 		"parser": "scissr",
-		"formatter": "json",
+		"generator": "json",
 		"nodes": [
 			{
 				"type": "object",
@@ -122,7 +122,7 @@ Produces:
 
 	{
 		"parser": "scissr",
-		"formatter": "json",
+		"generator": "json",
 		"nodes": [
 			{
 				"type": "object",
@@ -161,7 +161,7 @@ Produces:
 
 	{
 		"parser": "scissr",
-		"formatter": "json",
+		"generator": "json",
 		"nodes": [
 			{
 				"type": "abc",
@@ -184,7 +184,7 @@ Produces:
 
 	{
 		"parser": "scissr",
-		"formatter": "json",
+		"generator": "json",
 		"nodes": [
 			{
 				"type": "joe",
@@ -240,7 +240,7 @@ Produces:
 
 	{
 		"parser": "scissr",
-		"formatter": "json",
+		"generator": "json",
 		"nodes": [
 			{
 				"type": "joe",
@@ -287,7 +287,7 @@ Produces:
 		]
 	}
 
-###Formatter
+###Format generator
 Given:
 
 {:class="scissr-syntax"} 
@@ -297,7 +297,7 @@ Produces:
 
 	{
 		"parser": "scissr",
-		"formatter": "json",
+		"generator": "json",
 		"nodes": [
 			{
 				"type": "string",
@@ -327,7 +327,7 @@ Produces:
 
 	{
 		"parser": "scissr",
-		"formatter": "xml",
+		"generator": "xml",
 		"nodes": [
 			{
 				"type": "string",

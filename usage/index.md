@@ -32,7 +32,7 @@ Example: This abbreviation:
 ### Full syntax
 
 <pre class="sample">
-('<span class="label label-default">alias</span>':<span class="label label-default">element</span>,'<span class="label label-default">alias</span>':<span class="label label-default">element</span>)*<span class="label label-default">number of items</span>=<span class="label label-default">formatter</span>
+('<span class="label label-default">alias</span>':<span class="label label-default">element</span>,'<span class="label label-default">alias</span>':<span class="label label-default">element</span>)*<span class="label label-default">number of items</span>=<span class="label label-default">generator</span>
 </pre>
 
 	('FirstName':fname,'LastName':lname,'Contacts':('Home':tel,'Office':tel))*3=xml
