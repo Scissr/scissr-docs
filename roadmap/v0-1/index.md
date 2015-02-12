@@ -4,13 +4,13 @@ title: Features in version 0.1
 ---
 | Status  | Description 		  					 |
 | ------- | ---------------------------------------------------------- |
-| Planned | [Basic generation](#basic-generation)			 |
-| Planned | [Multiple fields](#multiple-fields)             		 |
-| Planned | [Field aliases](#field-aliases)	             	 	 |
-| Planned | [Arrays](#arrays) 						 |
-| Planned | [Multiple levels](#multiple-levels)     	  		 |
-| Planned | [Basic value resolving](#basic-value-resolving)      	 |
-| Planned | [Basic formatters](#basic-formatters) 			 |
+| Done | [Basic generation](#basic-generation)			 |
+| Done | [Multiple fields](#multiple-fields)             		 |
+| Done | [Field aliases](#field-aliases)	             	 	 |
+| Done | [Arrays](#arrays) 						 |
+| Done | [Multiple levels](#multiple-levels)     	  		 |
+| In progress | [Basic value resolving](#basic-value-resolving)      	 |
+| In progress | [Basic formatters](#basic-formatters) 			 |
 {: class="table"} 
 
 ###Basic generation
