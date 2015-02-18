@@ -9,7 +9,7 @@ title: Features in version 0.1
 | Done | [Field aliases](#field-aliases)	             	 	 |
 | Done | [Arrays](#arrays) 						 |
 | Done | [Multiple levels](#multiple-levels)     	  		 |
-| In progress | [Basic value resolving](#basic-value-resolving)      	 |
+| Done | [Basic value resolving](#basic-value-resolving)      	 |
 | In progress | [Basic formatters](#basic-formatters) 			 |
 {: class="table"} 
 
@@ -75,7 +75,7 @@ By default the result is generated as a single object. You can create an object 
 Given:
 
 {:class="scissr-syntax"} 
-	joe*3
+	(joe)*3
 
 Produces:
 
@@ -94,7 +94,7 @@ Produces:
 		]
 	}
 
-For multiple fields, you need to wrap them in brackets before specifying the astrix operator (`*`):
+For multiple fields:
 
 {:class="scissr-syntax"} 
 	people:(joe,soap)*3
@@ -252,7 +252,7 @@ XML is also supported out of the box:
 
 Produces:
 
-	<root>
+	<object>
 		<string>candy</string>
 		<int>51</int>
-	</root>
+	</object>
